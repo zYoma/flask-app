@@ -7,11 +7,9 @@ class FlaskAppTests(unittest.TestCase):
         tested_app.app.config['TESTING'] = True
         self.app = tested_app.app.test_client()
 
-
     def test_get(self):
         r = self.app.get('/')
         self.assertEqual(r.data, 'У меня получилось!')
-
 
     def test_post(self):
         r = self.app.post('/')
